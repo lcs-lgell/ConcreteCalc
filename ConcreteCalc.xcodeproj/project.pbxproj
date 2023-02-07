@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE421387299292FC00AEF044 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE421386299292FC00AEF044 /* ModelView.swift */; };
 		EE8A63612991DFE40079AA65 /* ConcreteCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A63602991DFE40079AA65 /* ConcreteCalcApp.swift */; };
 		EE8A63652991DFE70079AA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8A63642991DFE70079AA65 /* Assets.xcassets */; };
 		EE8A63682991DFE70079AA65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8A63672991DFE70079AA65 /* Preview Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE421386299292FC00AEF044 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		EE8A635D2991DFE40079AA65 /* ConcreteCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcreteCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8A63602991DFE40079AA65 /* ConcreteCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteCalcApp.swift; sourceTree = "<group>"; };
 		EE8A63642991DFE70079AA65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		EE8A63702991E03F0079AA65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EE421386299292FC00AEF044 /* ModelView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE421387299292FC00AEF044 /* ModelView.swift in Sources */,
 				EE8A63612991DFE40079AA65 /* ConcreteCalcApp.swift in Sources */,
 				EE8A63732991E0F60079AA65 /* OpeningView.swift in Sources */,
 			);
