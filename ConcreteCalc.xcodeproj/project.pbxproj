@@ -10,6 +10,7 @@
 		EE8A63612991DFE40079AA65 /* ConcreteCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A63602991DFE40079AA65 /* ConcreteCalcApp.swift */; };
 		EE8A63652991DFE70079AA65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8A63642991DFE70079AA65 /* Assets.xcassets */; };
 		EE8A63682991DFE70079AA65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE8A63672991DFE70079AA65 /* Preview Assets.xcassets */; };
+		EE8A63732991E0F60079AA65 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8A63722991E0F60079AA65 /* OpeningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		EE8A63602991DFE40079AA65 /* ConcreteCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteCalcApp.swift; sourceTree = "<group>"; };
 		EE8A63642991DFE70079AA65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE8A63672991DFE70079AA65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE8A63722991E0F60079AA65 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,9 +51,9 @@
 		EE8A635F2991DFE40079AA65 /* ConcreteCalc */ = {
 			isa = PBXGroup;
 			children = (
+				EE8A63602991DFE40079AA65 /* ConcreteCalcApp.swift */,
 				EE8A63712991E0530079AA65 /* List */,
 				EE8A63702991E03F0079AA65 /* Model */,
-				EE8A63602991DFE40079AA65 /* ConcreteCalcApp.swift */,
 				EE8A636E2991E0240079AA65 /* Views */,
 				EE8A63642991DFE70079AA65 /* Assets.xcassets */,
 				EE8A63662991DFE70079AA65 /* Preview Content */,
@@ -70,6 +72,7 @@
 		EE8A636E2991E0240079AA65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EE8A63722991E0F60079AA65 /* OpeningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE8A63612991DFE40079AA65 /* ConcreteCalcApp.swift in Sources */,
+				EE8A63732991E0F60079AA65 /* OpeningView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
