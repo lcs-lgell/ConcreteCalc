@@ -9,12 +9,41 @@ import SwiftUI
 
 struct ModelView: View {
     //MARK: Stored Properties
-    @State var height = Double()
-    @State var width = Double()
-    @State var length = Double()
+    @State var height: String = ""
+    @State var width: String = ""
+    @State var length: String = ""
     
     //MARK: Computed Properties
-    
+    //convert height
+    var heightAsOptionalDouble: Double? {
+        guard let unwrappedheight = Double(height) else {
+                    // Could not unwrap – invalid input
+                    return nil
+                }
+
+                // Return the unwrapped value
+                return unwrappedheight
+    }
+    //convert height
+    var widthAsOptionalDouble: Double? {
+        guard let unwrappedwidth = Double(width) else {
+                    // Could not unwrap – invalid input
+                    return nil
+                }
+
+                // Return the unwrapped value
+                return unwrappedwidth
+    }
+    //convertlength
+    var lengthAsOptionalDouble: Double? {
+        guard let unwrappedlength = Double(length) else {
+                    // Could not unwrap – invalid input
+                    return nil
+                }
+
+                // Return the unwrapped value
+                return unwrappedlength
+    }
     
     var body: some View {
         VStack {
@@ -22,9 +51,21 @@ struct ModelView: View {
                 .resizable()
                 .scaledToFit()
                 .padding()
-            HStack {
-                TextField(50.00, text: $height)
+            HStack(spacing: -10) {
+                Text("Height:")
+            TextField("25.0", text: $height)
+                .padding(.horizontal)
+                .font(.title2)
+                Text("length:")
+            TextField("25.0", text: $length)
+                .padding(.horizontal)
+                .font(.title2)
+                Text("Weight:")
+            TextField("25.0", text: $width)
+                .padding(.horizontal)
+                .font(.title2)
             }
+            .padding()
                
             
         }
