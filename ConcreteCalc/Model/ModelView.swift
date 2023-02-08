@@ -13,6 +13,7 @@ struct ModelView: View {
     @State var width: String = ""
     @State var length: String = ""
     @State var desiredPrecision: Double = 2
+    let cost = 9.71
     
     
     //MARK: Computed Properties
@@ -48,7 +49,7 @@ struct ModelView: View {
         guard let height = heightAsOptionalDouble, let width = widthAsOptionalDouble, let length = lengthAsOptionalDouble else {
             return nil
         }
-        let volume = height * width * length
+        let volume = (height * width * length) * 0.000578704
         return volume
     }
     
@@ -56,9 +57,12 @@ struct ModelView: View {
             guard let area = area else {
                 return 0
             }
-            return (area * 0.000578704) / 0.375
+            return (area) / 0.375
         }
-    
+    var Cost: Double {
+        
+        return (cost * bagsNeeded) * 1.13
+    }
     
     
     
@@ -98,8 +102,11 @@ struct ModelView: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
             //write out anwsers for area, amount of bags, and estimated price
+            Text("*Volume in Cubic Feet")
+                .font(.title2)
             Text("Volume: \(area ?? 0)")
-            Text("Bag Needed: \(bagsNeeded)")
+            Text("Bag Needed: \(bagsNeeded.formatted(.number.rounded(rule: .up)))")
+            
                
             
         }
