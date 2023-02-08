@@ -13,7 +13,7 @@ struct ModelView: View {
     @State var width: String = ""
     @State var length: String = ""
     @State var desiredPrecision: Double = 2
-    let bagdistr = 0.375
+    
     
     //MARK: Computed Properties
     //convert height
@@ -52,7 +52,12 @@ struct ModelView: View {
         return volume
     }
     
-    let bagsNeeded = (area * 0.000578704)
+    var bagsNeeded: Double {
+            guard let area = area else {
+                return 0
+            }
+            return (area * 0.000578704) / 0.375
+        }
     
     
     
@@ -72,7 +77,7 @@ struct ModelView: View {
             HStack(spacing: -10) {
                 Text("Height:")
                 
-            TextField("25.0", text: $height)
+            TextField("8.0", text: $height)
                 .padding(.horizontal)
                 .font(.title2)
                 Text("length:")
@@ -93,8 +98,8 @@ struct ModelView: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
             //write out anwsers for area, amount of bags, and estimated price
-            Text("Volume: \(area ?? 0 .formatted(.number.precision(.significantDigits(Int(desiredPrecision)))))")
-            Text("")
+            Text("Volume: \(area ?? 0)")
+            Text("Bag Needed: \(bagsNeeded)")
                
             
         }
