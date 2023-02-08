@@ -13,7 +13,7 @@ struct ModelView: View {
     @State var width: String = ""
     @State var length: String = ""
     @State var desiredPrecision: Double = 2
-    let cost = 9.71
+   
     
     
     //MARK: Computed Properties
@@ -45,13 +45,14 @@ struct ModelView: View {
         return unwrappedlength
     }
     
-    var result: (area: String, bagsNeeded: String) {
+    var result: (area: String, bagsNeeded: String, cost: String) {
         guard let height = heightAsOptionalDouble, let width = widthAsOptionalDouble, let length = lengthAsOptionalDouble else {
-            return ("Incorrect Value for height", "")
+            return ("Incorrect Values", "", "")
         }
         let area = (height * width * length) * 0.000578704
         let bagsNeeded = area / 0.375
-        return ("\(area)", "\(bagsNeeded.formatted(.number.rounded(rule: .up)))")
+        let cost = (bagsNeeded * 9.71) * 1.13
+        return ("\(area.formatted(.number.precision(.fractionLength(1))))", "\(bagsNeeded.formatted(.number.rounded(rule: .up, increment: 1)))", "\(cost.formatted(.number.precision(.fractionLength(1))))")
     }
         
     var body: some View {
@@ -77,7 +78,7 @@ struct ModelView: View {
             TextField("25.0", text: $length)
                 .padding(.horizontal)
                 .font(.title2)
-                Text("Height:")
+                Text("Width:")
                 
             TextField("25.0", text: $width)
                 .padding(.horizontal)
@@ -94,6 +95,7 @@ struct ModelView: View {
                 .font(.title2)
             Text("Area: \(result.area)")
             Text("Bag Needed: \(result.bagsNeeded)")
+            Text("Cost of all Bags: \(result.cost) $")
             
                
             
