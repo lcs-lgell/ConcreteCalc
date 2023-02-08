@@ -12,8 +12,8 @@ struct ModelView: View {
     @State var height: String = ""
     @State var width: String = ""
     @State var length: String = ""
-    @State var desiredPrecision: Double = 2
-   
+    
+    
     
     
     //MARK: Computed Properties
