@@ -45,27 +45,15 @@ struct ModelView: View {
         return unwrappedlength
     }
     
-    var area: Double? {
+    var result: (area: String, bagsNeeded: String) {
         guard let height = heightAsOptionalDouble, let width = widthAsOptionalDouble, let length = lengthAsOptionalDouble else {
-            return nil
+            return ("Incorrect Value for height", "")
         }
-        let volume = (height * width * length) * 0.000578704
-        return volume
+        let area = (height * width * length) * 0.000578704
+        let bagsNeeded = area / 0.375
+        return ("\(area)", "\(bagsNeeded.formatted(.number.rounded(rule: .up)))")
     }
-    
-    var bagsNeeded: Double {
-            guard let area = area else {
-                return 0
-            }
-            return (area) / 0.375
-        }
-    var Cost: Double {
         
-        return (cost * bagsNeeded) * 1.13
-    }
-    
-    
-    
     var body: some View {
         ScrollView {
             //Image which will be variable
@@ -84,12 +72,12 @@ struct ModelView: View {
             TextField("8.0", text: $height)
                 .padding(.horizontal)
                 .font(.title2)
-                Text("length:")
+                Text("Length:")
                 
             TextField("25.0", text: $length)
                 .padding(.horizontal)
                 .font(.title2)
-                Text("Weight:")
+                Text("Height:")
                 
             TextField("25.0", text: $width)
                 .padding(.horizontal)
@@ -102,10 +90,10 @@ struct ModelView: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
             //write out anwsers for area, amount of bags, and estimated price
-            Text("*Volume in Cubic Feet")
+            Text("*Area in Cubic Feet")
                 .font(.title2)
-            Text("Volume: \(area ?? 0)")
-            Text("Bag Needed: \(bagsNeeded.formatted(.number.rounded(rule: .up)))")
+            Text("Area: \(result.area)")
+            Text("Bag Needed: \(result.bagsNeeded)")
             
                
             
