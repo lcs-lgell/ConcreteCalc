@@ -57,6 +57,8 @@ struct ModelView: View {
     }
         
     var body: some View {
+        
+        NavigationView {
         ScrollView {
             //Image which will be variable
             Image("Mortar")
@@ -117,13 +119,16 @@ struct ModelView: View {
             
         }
         .navigationTitle("Concrete Calculator")
+        }
+        
+        
     }
 }
 
 struct ModelView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
- //           ModelView( history: <#Binding<[Result]>#>)
-        }
+
+        ModelView(history: Binding.constant([]))
+        
     }
 }

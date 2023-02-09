@@ -16,7 +16,7 @@ struct ConcreteCalcApp: App {
             TabView {
                 ModelView(history: $history)
                     .tabItem {
-                        Image(systemName: "rectangle.split.2x2.fill")
+                        Image(systemName: "building.columns.fill")
                         Text("Calculate")
                     }
                 
