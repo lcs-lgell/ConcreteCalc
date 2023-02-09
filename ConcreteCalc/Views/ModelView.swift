@@ -12,6 +12,7 @@ struct ModelView: View {
     @State var height: String = ""
     @State var width: String = ""
     @State var length: String = ""
+    @Binding var history: [Result]
     
     
     
@@ -70,17 +71,17 @@ struct ModelView: View {
             HStack(spacing: -10) {
                 Text("Height:")
                 
-            TextField("8.0", text: $height)
+            TextField("10.0", text: $height)
                 .padding(.horizontal)
                 .font(.title2)
                 Text("Length:")
                 
-            TextField("25.0", text: $length)
+            TextField("10.0", text: $length)
                 .padding(.horizontal)
                 .font(.title2)
                 Text("Width:")
                 
-            TextField("25.0", text: $width)
+            TextField("10.0", text: $width)
                 .padding(.horizontal)
                 .font(.title2)
             }
@@ -97,17 +98,32 @@ struct ModelView: View {
             Text("Bag Needed: \(result.bagsNeeded)")
             Text("Cost of all Bags: \(result.cost) $")
             
+            
+            Button(action: {
+                let priorResult = Result(area: result.area, bagsNeeded: result.bagsNeeded, cost: result.cost)
+                //save the history
+                    history.append(priorResult)
+                }, label: {
+                    Text("Save")
+                        .font(.headline.uppercaseSmallCaps())
+                })
+                .buttonStyle(.bordered)
+            
+            
+            
+            
+            
                
             
         }
-        .navigationTitle("Mortar Concrete")
+        .navigationTitle("Concrete Calculator")
     }
 }
 
 struct ModelView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ModelView()
+ //           ModelView( history: <#Binding<[Result]>#>)
         }
     }
 }
